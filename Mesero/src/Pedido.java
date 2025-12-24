@@ -1,0 +1,44 @@
+import java.util.Date;
+import java.util.List;
+
+public class Pedido {
+    private int numero;
+    private int mesa;
+    private Date dataRegistro;
+    private List<ItemPedido> itens;
+
+    Pedido(int mesa) {
+        this.mesa = mesa;
+        this.dataRegistro = new Date();
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public int getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(int mesa) {
+        this.mesa = mesa;
+    }
+
+    public Date getDataRegistro() {
+        return dataRegistro;
+    }
+
+    public List<ItemPedido> getItens() {
+        return itens;
+    }
+
+    public void adicionaItem(ItemPedido itemNovo) {
+        this.itens.add(itemNovo);
+        this.dataRegistro = new Date();
+    }
+
+    public void removeItem(ItemPedido itemNovo) {
+        this.itens.remove(itemNovo);
+        this.dataRegistro = new Date();
+    }
+}
