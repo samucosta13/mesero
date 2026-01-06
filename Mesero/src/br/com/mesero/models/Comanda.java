@@ -1,3 +1,5 @@
+package br.com.mesero.models;
+
 import java.util.Queue;
 
 public class Comanda {

@@ -1,3 +1,5 @@
+package br.com.mesero.models;
+
 import java.util.Date;
 import java.util.List;
 

@@ -1,3 +1,5 @@
+package br.com.mesero.models;
+
 public class Usuario {
     private int identificador;
     private String email;

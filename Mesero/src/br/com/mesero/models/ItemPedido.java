@@ -1,3 +1,5 @@
+package br.com.mesero.models;
+
 public class ItemPedido {
     private String nome;
     private int quantidade;

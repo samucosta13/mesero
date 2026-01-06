@@ -1,3 +1,5 @@
+package br.com.mesero.models;
+
 import java.util.List;
 import java.util.Queue;
 
@@ -48,7 +50,7 @@ public void cadastraItemPedido(String nome) {
 }
 
 public void apagaItemPedido(ItemPedido itemPedido) {
-    // Excludão do cardápio (tabela item_pedido)
+    // Exclusão do cardápio (tabela item_pedido)
 }
 
 }
