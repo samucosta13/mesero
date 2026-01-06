@@ -3,6 +3,7 @@ package br.com.mesero.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class AtendenteDAO {
             
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao inserir atendente", e);
         }
     }
 
@@ -47,8 +48,8 @@ public class AtendenteDAO {
                 id = rs.getInt("id_atendente");
             }
             
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao buscar atendente por email", e);
         }
 
         return id;

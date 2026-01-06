@@ -3,6 +3,7 @@ package br.com.mesero.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +25,8 @@ public class CentralDAO {
             
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao inserir central", e);
         }
     }
 

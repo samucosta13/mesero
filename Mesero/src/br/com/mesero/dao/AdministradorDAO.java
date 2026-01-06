@@ -3,6 +3,7 @@ package br.com.mesero.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class AdministradorDAO {
             
             ps.executeUpdate();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao inserir administrador", e);
         }
     }
 
@@ -47,8 +48,8 @@ public class AdministradorDAO {
                 id = rs.getInt("id_administrador");
             }
             
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao buscar administrador por email", e);
         }
 
         return id;
