@@ -12,7 +12,7 @@ import br.com.mesero.models.*;
 
 public class AtendenteDAO {
 
-    public boolean inserir(Atendente atendente, String senha) {
+    public void inserir(Atendente atendente, String senha) {
 
         String sql = "INSERT INTO atendente (nome, email, senha) VALUES (?, ?, ?)";
 
@@ -29,8 +29,6 @@ public class AtendenteDAO {
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao inserir atendente", e);
         }
-
-        return true;
     }
 
     public int buscarIdPorEmail(String email) {

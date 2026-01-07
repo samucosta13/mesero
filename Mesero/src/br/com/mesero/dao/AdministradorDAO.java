@@ -12,7 +12,7 @@ import br.com.mesero.models.*;
 
 public class AdministradorDAO {
 
-    public boolean inserir(Administrador administrador, String senha) {
+    public void inserir(Administrador administrador, String senha) {
 
         String sql = "INSERT INTO administrador (nome, email, senha) VALUES (?, ?, ?)";
 
@@ -29,8 +29,6 @@ public class AdministradorDAO {
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao inserir administrador", e);
         }
-
-        return true;
     }
 
     public int buscarIdPorEmail(String email) {
