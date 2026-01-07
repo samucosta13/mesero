@@ -26,8 +26,7 @@ public void setNome(String nome) {
     this.nome = nome;
 }
 
-public void criaComanda(int numero, Atendente atendente) {
-    Comanda comanda = new Comanda(numero, atendente);
+public void adicionaComanda(Comanda comanda) {
     this.comandas.add(comanda);
 }
 
@@ -45,12 +44,12 @@ public boolean cancelaPedido(Pedido pedido) {
     return true;
 }
 
-public void cadastraItemPedido(String nome) {
+/* public void cadastraItemPedido(String nome) {
     // Inclusão no cardápio (tabela item_pedido)
 }
 
 public void apagaItemPedido(ItemPedido itemPedido) {
     // Exclusão do cardápio (tabela item_pedido)
-}
+} */
 
 }
