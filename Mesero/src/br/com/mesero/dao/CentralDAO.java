@@ -12,7 +12,7 @@ import br.com.mesero.models.*;
 
 public class CentralDAO {
     
-    public void inserir(Central central) {
+    public boolean inserir(Central central) {
 
         String sql = "INSERT INTO central (nome, id_administrador) VALUES (?, ?)";
 
@@ -28,6 +28,7 @@ public class CentralDAO {
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao inserir central", e);
         }
-    }
 
+        return true;
+    }
 }
