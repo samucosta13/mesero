@@ -36,4 +36,5 @@ public class CentralDAO {
             throw new RuntimeException("Erro ao inserir central", e);
         }
     }
+
 }
