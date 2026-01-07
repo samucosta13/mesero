@@ -32,10 +32,6 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getSenha(String senha) {
-        return senha;
-    }
-
     public void setSenha(String senha) {
         this.senha = senha;
     }
