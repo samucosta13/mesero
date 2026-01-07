@@ -43,17 +43,4 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public boolean entra(String senha) {
-        if (this.senha.equals(senha)) {
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    public boolean sai() {
-        return true;
-    }
 }
