@@ -48,4 +48,15 @@ public class Usuario {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public boolean autenticar(String senha){
+        return this.senha.equals(senha);
+    }
+
+    public void alterarSenha(String senhaAtual, String senhaNova){
+        if (!autenticar(senhaAtual)) {
+            throw new IllegalArgumentException("Senha atual inválida");
+        }
+        this.senha = senhaNova;
+    }
 }
