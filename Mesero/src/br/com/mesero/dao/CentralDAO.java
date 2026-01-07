@@ -18,12 +18,19 @@ public class CentralDAO {
 
         try (
             Connection conn = Database.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql)
+            PreparedStatement ps = conn.prepareStatement(
+            sql, PreparedStatement.RETURN_GENERATED_KEYS)
         ) { 
             ps.setString(1, central.getNome());
             ps.setInt(2, central.getAdministrador().getIdentificador());
             
             ps.executeUpdate();
+
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    central.setIdentificador(rs.getInt(1));
+                }
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao inserir central", e);

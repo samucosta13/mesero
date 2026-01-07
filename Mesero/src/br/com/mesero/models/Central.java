@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class Central {
+    private int identificador;
     private Administrador administrador;
     private Queue<Pedido> filaDePedidos;
     private List<Comanda> comandas;
@@ -15,8 +16,15 @@ public Central(Administrador administrador, String nome) {
     this.administrador = administrador;
     this.filaDePedidos = new LinkedList<>();
     this.comandas = new ArrayList<>();
-    this.nome = nome;
-    
+    this.nome = nome; 
+}
+
+public int getIdentificador() {
+    return identificador;
+}
+
+public void setIdentificador(int identificador) {
+    this.identificador = identificador;
 }
 
 public Administrador getAdministrador() {
