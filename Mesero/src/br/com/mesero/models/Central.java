@@ -1,5 +1,7 @@
 package br.com.mesero.models;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
@@ -9,9 +11,12 @@ public class Central {
     private List<Comanda> comandas;
     private String nome;
 
-Central(Administrador administrador, String nome) {
+public Central(Administrador administrador, String nome) {
     this.administrador = administrador;
+    this.filaDePedidos = new LinkedList<>();
+    this.comandas = new ArrayList<>();
     this.nome = nome;
+    
 }
 
 public Administrador getAdministrador() {
@@ -31,8 +36,7 @@ public void adicionaComanda(Comanda comanda) {
 }
 
 public boolean apagaComanda(Comanda comanda) {
-    this.comandas.remove(comanda);
-    return true;
+    return this.comandas.remove(comanda);
 }
 
 public void encaminhaPedido(Pedido pedido) {
@@ -40,8 +44,7 @@ public void encaminhaPedido(Pedido pedido) {
 }
 
 public boolean cancelaPedido(Pedido pedido) {
-    this.filaDePedidos.remove(pedido);
-    return true;
+    return this.filaDePedidos.remove(pedido);
 }
 
 /* public void cadastraItemPedido(String nome) {
