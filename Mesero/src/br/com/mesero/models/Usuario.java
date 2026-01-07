@@ -1,5 +1,10 @@
 package br.com.mesero.models;
 
+/*
+Model → regras que dizem como o objeto se comporta
+Service → regras que dizem o que acontece em um caso de uso
+*/
+
 public class Usuario {
 
     private int identificador;
