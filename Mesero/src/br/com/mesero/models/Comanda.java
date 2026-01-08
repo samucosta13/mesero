@@ -10,7 +10,7 @@ public class Comanda {
     private Queue<Pedido> pedidos;
     private String descricao;
 
-    Comanda(int numero, Atendente atendente) {
+    public Comanda(int numero, Atendente atendente) {
         this.numero = numero;
         this.atendente = atendente;
         this.pedidos = new LinkedList<>();

@@ -6,7 +6,7 @@ public class ItemPedido {
     private int quantidade;
     private String descricao;
 
-    ItemPedido(String nome, int quantidade) {
+    public ItemPedido(String nome, int quantidade) {
         this.nome = nome;
         this.quantidade = quantidade;
     }
