@@ -12,7 +12,7 @@ public class PedidoDAO {
 
     public void inserir(Pedido pedido, Comanda comanda) {
 
-        String sql = "INSERT INTO pedido (mesa, id_comanda) VALUES (?, ?)";
+        String sql = "INSERT INTO pedido (mesa, estado, id_comanda) VALUES (?, ?)";
 
         try (
             Connection conn = Database.getConnection();
@@ -20,7 +20,8 @@ public class PedidoDAO {
             sql, PreparedStatement.RETURN_GENERATED_KEYS)
         ) {
             ps.setInt(1, pedido.getMesa());
-            ps.setInt(2, comanda.getIdentificador());
+            ps.setString(2, pedido.getEstado());
+            ps.setInt(3, comanda.getIdentificador());
 
             ps.executeUpdate();
 

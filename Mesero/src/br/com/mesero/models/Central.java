@@ -13,7 +13,8 @@ public class Central {
     private String nome;
 
     public Central() {
-        
+        this.filaDePedidos = new LinkedList<>();
+        this.comandas = new ArrayList<>();
     };
 
     public Central(Administrador administrador, String nome) {

@@ -7,11 +7,13 @@ import java.util.List;
 public class Pedido {
     private int numero;
     private int mesa;
+    private String estado;
     private Date dataRegistro;
     private List<ItemPedido> itens;
 
-    Pedido(int mesa) {
+    Pedido(int mesa, String estado) {
         this.mesa = mesa;
+        this.estado = estado;
         this.dataRegistro = new Date();
         this.itens = new ArrayList<>();
     }
@@ -30,6 +32,14 @@ public class Pedido {
 
     public void setMesa(int mesa) {
         this.mesa = mesa;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Date getDataRegistro() {
