@@ -45,7 +45,7 @@ public class AtendenteDAO {
             if (rs.next()) {
                 id = rs.getInt("id_atendente");
             }
-            
+
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao buscar atendente por email", e);
         }

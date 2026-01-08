@@ -1,5 +1,6 @@
 package br.com.mesero.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,10 +13,15 @@ public class Pedido {
     Pedido(int mesa) {
         this.mesa = mesa;
         this.dataRegistro = new Date();
+        this.itens = new ArrayList<>();
     }
 
     public int getNumero() {
         return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public int getMesa() {
@@ -28,6 +34,10 @@ public class Pedido {
 
     public Date getDataRegistro() {
         return dataRegistro;
+    }
+
+    public void setDataRegistro(Date dataRegistro) {
+        this.dataRegistro = dataRegistro;
     }
 
     public List<ItemPedido> getItens() {

@@ -12,47 +12,46 @@ public class Central {
     private List<Comanda> comandas;
     private String nome;
 
-public Central(Administrador administrador, String nome) {
-    this.administrador = administrador;
-    this.filaDePedidos = new LinkedList<>();
-    this.comandas = new ArrayList<>();
-    this.nome = nome; 
-}
+    public Central(Administrador administrador, String nome) {
+        this.administrador = administrador;
+        this.filaDePedidos = new LinkedList<>();
+        this.comandas = new ArrayList<>();
+        this.nome = nome; 
+    }
 
-public int getIdentificador() {
-    return identificador;
-}
+    public int getIdentificador() {
+        return identificador;
+    }
 
-public void setIdentificador(int identificador) {
-    this.identificador = identificador;
-}
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
+    }
 
-public Administrador getAdministrador() {
-    return administrador;
-}
+    public Administrador getAdministrador() {
+        return administrador;
+    }
 
-public String getNome() {
-    return nome;
-}
+    public String getNome() {
+        return nome;
+    }
 
-public void setNome(String nome) {
-    this.nome = nome;
-}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-public void adicionaComanda(Comanda comanda) {
-    this.comandas.add(comanda);
-}
+    public void adicionaComanda(Comanda comanda) {
+        this.comandas.add(comanda);
+    }
 
-public boolean apagaComanda(Comanda comanda) {
-    return this.comandas.remove(comanda);
-}
+    public boolean apagaComanda(Comanda comanda) {
+        return this.comandas.remove(comanda);
+    }
 
-public void encaminhaPedido(Pedido pedido) {
-    this.filaDePedidos.add(pedido);
-}
+    public void encaminhaPedido(Pedido pedido) {
+        this.filaDePedidos.add(pedido);
+    }
 
-public boolean cancelaPedido(Pedido pedido) {
-    return this.filaDePedidos.remove(pedido);
-}
-
+    public boolean cancelaPedido(Pedido pedido) {
+        return this.filaDePedidos.remove(pedido);
+    }
 }

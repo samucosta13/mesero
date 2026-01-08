@@ -21,7 +21,7 @@ public class AdministradorDAO {
             ps.setString(1, administrador.getNome());
             ps.setString(2, administrador.getEmail());
             ps.setString(3, senha);
-            
+
             ps.executeUpdate();
 
         } catch (SQLException e) {
