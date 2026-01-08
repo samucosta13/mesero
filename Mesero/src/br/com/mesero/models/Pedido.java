@@ -22,8 +22,8 @@ public class Pedido {
         return identificador;
     }
 
-    public void setIdentificador(int numero) {
-        this.identificador = numero;
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
     }
 
     public int getMesa() {
