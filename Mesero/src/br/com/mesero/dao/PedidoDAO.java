@@ -10,9 +10,9 @@ import br.com.mesero.models.*;
 
 public class PedidoDAO {
 
-    public void inserir(Pedido pedido, Atendente atendente) {
+    public void inserir(Pedido pedido, Comanda comanda) {
 
-        String sql = "INSERT INTO pedido (mesa, id_atendente) VALUES (?, ?)";
+        String sql = "INSERT INTO pedido (mesa, id_comanda) VALUES (?, ?)";
 
         try (
             Connection conn = Database.getConnection();
@@ -20,7 +20,7 @@ public class PedidoDAO {
             sql, PreparedStatement.RETURN_GENERATED_KEYS)
         ) {
             ps.setInt(1, pedido.getMesa());
-            ps.setInt(2, atendente.getIdentificador());
+            ps.setInt(2, comanda.getIdentificador());
 
             ps.executeUpdate();
 
@@ -36,7 +36,5 @@ public class PedidoDAO {
     }
 
     // registrarItemPedido (tabela registro)
-
-    // encaminharPedido (tabela pedido, coluna id_fila)
 
 }
