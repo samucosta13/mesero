@@ -11,6 +11,7 @@ public class Comanda {
     private String descricao;
 
     public Comanda() {
+        this.pedidos = new LinkedList<>();
     }
 
     public Comanda(int numero, Atendente atendente) {
