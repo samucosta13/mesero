@@ -10,7 +10,7 @@ import br.com.mesero.models.*;
 
 public class ComandaDAO {
 
-    public void inserir(Comanda comanda, Central central, Atendente atendente) {
+    public void inserir(Comanda comanda, Central central) {
 
         String sql = "INSERT INTO comanda (numero, descricao, id_central, id_atendente) VALUES (?, ?, ?, ?)";
 
@@ -22,7 +22,7 @@ public class ComandaDAO {
             ps.setInt(1, comanda.getNumero());
             ps.setString(2, comanda.getDescricao());
             ps.setInt(3, central.getIdentificador());
-            ps.setInt(4, atendente.getIdentificador());
+            ps.setInt(4, comanda.getAtendente().getIdentificador());
 
             ps.executeUpdate();
 
