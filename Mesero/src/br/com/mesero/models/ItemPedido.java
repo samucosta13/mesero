@@ -1,14 +1,22 @@
 package br.com.mesero.models;
 
 public class ItemPedido {
+    private int identificador;
     private String nome;
     private int quantidade;
     private String descricao;
 
-    // Construtor para registro no pedido
     ItemPedido(String nome, int quantidade) {
         this.nome = nome;
         this.quantidade = quantidade;
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
     }
 
     public String getNome() {

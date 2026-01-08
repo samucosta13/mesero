@@ -1,8 +1,11 @@
 package br.com.mesero.models;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class Comanda {
+    private int identificador;
     private int numero;
     private Atendente atendente;
     private Queue<Pedido> filaDePedidos;
@@ -11,6 +14,15 @@ public class Comanda {
     Comanda(int numero, Atendente atendente) {
         this.numero = numero;
         this.atendente = atendente;
+        this.filaDePedidos = new LinkedList<>();
+    }
+
+    public int getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(int identificador) {
+        this.identificador = identificador;
     }
 
     public int getNumero() {

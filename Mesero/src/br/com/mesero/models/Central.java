@@ -55,12 +55,4 @@ public boolean cancelaPedido(Pedido pedido) {
     return this.filaDePedidos.remove(pedido);
 }
 
-/* public void cadastraItemPedido(String nome) {
-    // Inclusão no cardápio (tabela item_pedido)
-}
-
-public void apagaItemPedido(ItemPedido itemPedido) {
-    // Exclusão do cardápio (tabela item_pedido)
-} */
-
 }
