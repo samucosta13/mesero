@@ -7,13 +7,13 @@ public class Comanda {
     private int identificador;
     private int numero;
     private Atendente atendente;
-    private Queue<Pedido> filaDePedidos;
+    private Queue<Pedido> pedidos;
     private String descricao;
 
     Comanda(int numero, Atendente atendente) {
         this.numero = numero;
         this.atendente = atendente;
-        this.filaDePedidos = new LinkedList<>();
+        this.pedidos = new LinkedList<>();
     }
 
     public int getIdentificador() {
@@ -45,11 +45,11 @@ public class Comanda {
     }
 
     public void salvaPedido(Pedido pedido) {
-        this.filaDePedidos.add(pedido);
+        this.pedidos.add(pedido);
     }
 
     public boolean apagaPedido(Pedido pedido) {
-        this.filaDePedidos.remove(pedido);
+        this.pedidos.remove(pedido);
         return true;
     }
 }
