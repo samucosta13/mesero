@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Pedido {
-    private int numero;
+    private int identificador;
     private int mesa;
     private String estado;
     private Date dataRegistro;
@@ -18,12 +18,12 @@ public class Pedido {
         this.itens = new ArrayList<>();
     }
 
-    public int getNumero() {
-        return numero;
+    public int getIdentificador() {
+        return identificador;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setIdentificador(int numero) {
+        this.identificador = numero;
     }
 
     public int getMesa() {

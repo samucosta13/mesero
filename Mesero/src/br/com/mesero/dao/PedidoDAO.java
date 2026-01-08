@@ -27,7 +27,7 @@ public class PedidoDAO {
 
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
-                    pedido.setNumero(rs.getInt(1));
+                    pedido.setIdentificador(rs.getInt(1));
                 }
             }
 
