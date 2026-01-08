@@ -10,6 +10,9 @@ public class Comanda {
     private Queue<Pedido> pedidos;
     private String descricao;
 
+    public Comanda() {
+    }
+
     public Comanda(int numero, Atendente atendente) {
         this.numero = numero;
         this.atendente = atendente;

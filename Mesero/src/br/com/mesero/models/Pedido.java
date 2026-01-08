@@ -11,6 +11,9 @@ public class Pedido {
     private Date dataRegistro;
     private List<ItemPedido> itens;
 
+    public Pedido() {
+    }
+
     public Pedido(int mesa, String estado) {
         this.mesa = mesa;
         this.estado = estado;

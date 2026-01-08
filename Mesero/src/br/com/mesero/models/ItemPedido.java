@@ -6,6 +6,9 @@ public class ItemPedido {
     private int quantidade;
     private String descricao;
 
+    public ItemPedido() {
+    }
+
     public ItemPedido(String nome, int quantidade) {
         this.nome = nome;
         this.quantidade = quantidade;
