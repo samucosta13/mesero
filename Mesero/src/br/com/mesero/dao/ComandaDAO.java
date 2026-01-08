@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import br.com.mesero.database.Database;
 import br.com.mesero.models.*;
@@ -35,7 +33,7 @@ public class ComandaDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao cadastrar item", e);
+            throw new RuntimeException("Erro ao inserir comanda", e);
         }
     }
 
