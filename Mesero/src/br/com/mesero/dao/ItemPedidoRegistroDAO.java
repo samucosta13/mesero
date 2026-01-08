@@ -8,31 +8,31 @@ import java.sql.SQLException;
 import br.com.mesero.database.Database;
 import br.com.mesero.models.*;
 
-public class CentralDAO {
-    
-    public void inserir(Central central) {
+public class ItemPedidoRegistroDAO {
 
-        String sql = "INSERT INTO central (nome, id_administrador) VALUES (?, ?)";
+    public void inserir(ItemPedidoRegistro itemPedidoRegistro) {
+
+        String sql = "INSERT INTO registro (id_pedido, id_item_pedido, quantidade) VALUES (?, ?, ?)";
 
         try (
             Connection conn = Database.getConnection();
             PreparedStatement ps = conn.prepareStatement(
             sql, PreparedStatement.RETURN_GENERATED_KEYS)
         ) { 
-            ps.setString(1, central.getNome());
-            ps.setInt(2, central.getAdministrador().getIdentificador());
+            ps.setInt(1, itemPedidoRegistro.getPedido().getIdentificador());
+            ps.setInt(2, itemPedidoRegistro.getItem().getIdentificador());
+            ps.setInt(3, itemPedidoRegistro.getQuantidade());
 
             ps.executeUpdate();
 
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) {
-                    central.setIdentificador(rs.getInt(1));
+                    itemPedidoRegistro.setIdentificador(rs.getInt(1));
                 }
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao inserir central", e);
+            throw new RuntimeException("Erro ao registrar item de pedido", e);
         }
     }
-
 }

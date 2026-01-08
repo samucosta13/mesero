@@ -3,15 +3,13 @@ package br.com.mesero.models;
 public class ItemPedido {
     private int identificador;
     private String nome;
-    private int quantidade;
     private String descricao;
 
     public ItemPedido() {
     }
 
-    public ItemPedido(String nome, int quantidade) {
+    public ItemPedido(String nome) {
         this.nome = nome;
-        this.quantidade = quantidade;
     }
 
     public int getIdentificador() {
@@ -24,14 +22,6 @@ public class ItemPedido {
 
     public String getNome() {
         return nome;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
     }
 
     public String getDescricao() {

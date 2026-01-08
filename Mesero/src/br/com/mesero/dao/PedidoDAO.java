@@ -36,6 +36,4 @@ public class PedidoDAO {
         }
     }
 
-    // registrarItemPedido (tabela registro)
-
 }
