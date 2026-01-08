@@ -11,7 +11,7 @@ public class Usuario {
     private String email;
     private String senha;
     private String nome;
-    
+
     public Usuario() {
     }
 
@@ -25,7 +25,7 @@ public class Usuario {
         return identificador;
     }
 
-    public void identificar(int id) {
+    public void setIdentificador(int id) {
         this.identificador = id;
     }
 
