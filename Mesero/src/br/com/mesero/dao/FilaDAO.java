@@ -22,7 +22,7 @@ public class FilaDAO {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao criar a fila", e);
+            throw new RuntimeException("Erro ao criar fila", e);
         }
     }
 
