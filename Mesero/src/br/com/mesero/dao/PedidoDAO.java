@@ -35,8 +35,8 @@ public class PedidoDAO {
         }
     }
 
-    // registrarItemPedido
+    // registrarItemPedido (tabela registro)
 
-    // encaminharPedido
+    // encaminharPedido (tabela pedido, coluna id_fila)
 
 }
