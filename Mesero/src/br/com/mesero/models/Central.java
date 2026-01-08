@@ -12,6 +12,10 @@ public class Central {
     private List<Comanda> comandas;
     private String nome;
 
+    public Central() {
+        
+    };
+
     public Central(Administrador administrador, String nome) {
         this.administrador = administrador;
         this.filaDePedidos = new LinkedList<>();
