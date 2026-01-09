@@ -8,16 +8,15 @@ public class Pedido {
     private int identificador;
     private int mesa;
     private String estado;
-    private Date dataRegistro;
     private List<ItemPedido> itens;
 
     public Pedido() {
+        this.itens = new ArrayList<>();
     }
 
     public Pedido(int mesa, String estado) {
         this.mesa = mesa;
         this.estado = estado;
-        this.dataRegistro = new Date();
         this.itens = new ArrayList<>();
     }
 
@@ -45,25 +44,15 @@ public class Pedido {
         this.estado = estado;
     }
 
-    public Date getDataRegistro() {
-        return dataRegistro;
-    }
-
-    public void setDataRegistro(Date dataRegistro) {
-        this.dataRegistro = dataRegistro;
-    }
-
     public List<ItemPedido> getItens() {
         return itens;
     }
 
     public void adicionaItem(ItemPedido itemNovo) {
         this.itens.add(itemNovo);
-        this.dataRegistro = new Date();
     }
 
     public void removeItem(ItemPedido itemNovo) {
         this.itens.remove(itemNovo);
-        this.dataRegistro = new Date();
     }
 }
