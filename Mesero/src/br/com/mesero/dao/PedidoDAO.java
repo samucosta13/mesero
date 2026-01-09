@@ -12,7 +12,7 @@ public class PedidoDAO {
 
     public void inserir(Pedido pedido, Comanda comanda) {
 
-        String sql = "INSERT INTO pedido (mesa, estado, id_comanda) VALUES (?, ?)";
+        String sql = "INSERT INTO pedido (mesa, estado, id_comanda) VALUES (?, ?, ?)";
 
         try (
             Connection conn = Database.getConnection();
