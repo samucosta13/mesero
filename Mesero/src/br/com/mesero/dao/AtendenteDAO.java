@@ -16,41 +16,24 @@ public class AtendenteDAO {
 
         try (
             Connection conn = Database.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql)
+            PreparedStatement ps = conn.prepareStatement(
+            sql, PreparedStatement.RETURN_GENERATED_KEYS)
         ) { 
             ps.setString(1, atendente.getNome());
             ps.setString(2, atendente.getEmail());
             ps.setString(3, senha);
-            
+
             ps.executeUpdate();
+
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    atendente.setIdentificador(rs.getInt(1));
+                }
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao inserir atendente", e);
         }
-    }
-
-    public int buscarIdPorEmail(String email) {
-
-        String sql = "SELECT id_atendente FROM atendente WHERE email = ?";
-        int id = -1;
-
-        try (
-            Connection conn = Database.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
-        ) {
-            ps.setString(1, email);
-
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                id = rs.getInt("id_atendente");
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException("Erro ao buscar atendente por email", e);
-        }
-
-        return id;
     }
 
 }

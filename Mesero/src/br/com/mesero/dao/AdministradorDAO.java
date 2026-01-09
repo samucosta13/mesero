@@ -16,7 +16,8 @@ public class AdministradorDAO {
 
         try (
             Connection conn = Database.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql)
+            PreparedStatement ps = conn.prepareStatement(
+            sql, PreparedStatement.RETURN_GENERATED_KEYS)
         ) { 
             ps.setString(1, administrador.getNome());
             ps.setString(2, administrador.getEmail());
@@ -24,33 +25,15 @@ public class AdministradorDAO {
 
             ps.executeUpdate();
 
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    administrador.setIdentificador(rs.getInt(1));
+                }
+            }
+
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao inserir administrador", e);
         }
-    }
-
-    public int buscarIdPorEmail(String email) {
-
-        String sql = "SELECT id_administrador FROM administrador WHERE email = ?";
-        int id = -1;
-
-        try (
-            Connection conn = Database.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
-        ) {
-            ps.setString(1, email);
-
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                id = rs.getInt("id_administrador");
-            }
-            
-        } catch (SQLException e) {
-            throw new RuntimeException("Erro ao buscar administrador por email", e);
-        }
-
-        return id;
     }
 
 }
