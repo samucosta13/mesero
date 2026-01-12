@@ -36,4 +36,32 @@ public class AtendenteDAO {
         }
     }
 
+    public Atendente localizarPorEmail(String email) {
+
+        String sql = "SELECT id_atendente, nome, email, senha FROM atendente WHERE email = ?";
+
+        try (
+            Connection conn = Database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) { 
+            ps.setString(1, email);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Atendente atd = new Atendente();
+                    atd.setIdentificador(rs.getInt("id_atendente"));
+                    atd.setNome(rs.getString("nome"));
+                    atd.setEmail(rs.getString("email"));
+                    atd.setSenha(rs.getString("senha"));
+                    return atd;
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao localizar atendente", e);
+        }
+
+        return null;
+    }
+
 }

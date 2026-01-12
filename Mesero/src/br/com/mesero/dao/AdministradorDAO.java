@@ -36,4 +36,31 @@ public class AdministradorDAO {
         }
     }
 
+    public Administrador localizarPorEmail(String email) {
+
+        String sql = "SELECT id_administrador, nome, email, senha FROM administrador WHERE email = ?";
+
+        try (
+            Connection conn = Database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) { 
+            ps.setString(1, email);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Administrador adm = new Administrador();
+                    adm.setIdentificador(rs.getInt("id_administrador"));
+                    adm.setNome(rs.getString("nome"));
+                    adm.setEmail(rs.getString("email"));
+                    adm.setSenha(rs.getString("senha"));
+                    return adm;
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao localizar administrador", e);
+        }
+
+        return null;
+    }
 }
