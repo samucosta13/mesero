@@ -12,6 +12,11 @@ public class ItemPedido {
         this.nome = nome;
     }
 
+    public ItemPedido(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+    }
+
     public int getIdentificador() {
         return identificador;
     }
