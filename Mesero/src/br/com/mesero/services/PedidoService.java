@@ -13,4 +13,8 @@ public class PedidoService {
         return pedido;
     }
 
+    public boolean apagaPedido(int identificador) {
+        return pedidoDAO.deletar(identificador);
+    }
+
 }

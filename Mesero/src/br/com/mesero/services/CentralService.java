@@ -13,4 +13,8 @@ public class CentralService {
         return central;
     }
 
+    public boolean apagaCentral(int identificador) {
+        return centralDAO.deletar(identificador);
+    }
+
 }

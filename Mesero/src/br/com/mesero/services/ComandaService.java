@@ -12,4 +12,8 @@ public class ComandaService {
         return comanda;
     }
 
+    public boolean apagaComanda(int identificador) {
+        return comandaDAO.deletar(identificador);
+    }
+
 }

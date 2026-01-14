@@ -13,4 +13,8 @@ public class ItemPedidoRegistroService {
         return registro;
     }
 
+    public boolean apagaRegistro(int identificador) {
+        return registroDAO.deletar(identificador);
+    }
+
 }

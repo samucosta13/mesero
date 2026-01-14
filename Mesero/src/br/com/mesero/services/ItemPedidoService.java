@@ -19,4 +19,8 @@ public class ItemPedidoService {
         return item;
     }
 
+    public boolean apagaItemPedido(int identificador) {
+        return itemDao.deletar(identificador);
+    }
+
 }
