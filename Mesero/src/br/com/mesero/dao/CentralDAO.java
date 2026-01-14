@@ -37,7 +37,7 @@ public class CentralDAO {
 
     public boolean deletar(int id) {
 
-        String sql = "DELETE FROM central WHERE id = ?";
+        String sql = "DELETE FROM central WHERE id_central = ?";
 
         try (
             Connection conn = Database.getConnection();

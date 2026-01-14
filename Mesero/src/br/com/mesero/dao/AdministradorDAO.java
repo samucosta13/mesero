@@ -38,7 +38,7 @@ public class AdministradorDAO {
 
     public boolean deletar(int id) {
 
-        String sql = "DELETE FROM administrador WHERE id = ?";
+        String sql = "DELETE FROM administrador WHERE id_administrador = ?";
 
         try (
             Connection conn = Database.getConnection();

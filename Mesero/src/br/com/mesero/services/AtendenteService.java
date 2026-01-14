@@ -23,13 +23,8 @@ public class AtendenteService extends UsuarioService {
 
     @Override
     public boolean entra(String email, String senha){
-
-        if (!senha.equals(atendenteDAO.localizarPorEmail(email).getEmail())) {
-            return false;
-        } else {
-            return true;
-        }
-
+        Atendente atd = atendenteDAO.localizarPorEmail(email);
+        return atd != null && atd.autenticar(senha);
     }
 
 }

@@ -7,8 +7,9 @@ public class ComandaService {
 
     ComandaDAO comandaDAO = new ComandaDAO();
 
-    public Comanda criaComanda(int numero, Atendente atendente) {
+    public Comanda criaComanda(int numero, Atendente atendente, Central central) {
         Comanda comanda = new Comanda(numero, atendente);
+        comandaDAO.inserir(comanda, central);
         return comanda;
     }
 

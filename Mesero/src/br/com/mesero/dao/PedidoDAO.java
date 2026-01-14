@@ -38,7 +38,7 @@ public class PedidoDAO {
 
     public boolean deletar(int id) {
 
-        String sql = "DELETE FROM pedido WHERE id = ?";
+        String sql = "DELETE FROM pedido WHERE id_pedido = ?";
 
         try (
             Connection conn = Database.getConnection();

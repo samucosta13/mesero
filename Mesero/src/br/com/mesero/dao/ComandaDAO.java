@@ -39,7 +39,7 @@ public class ComandaDAO {
 
     public boolean deletar(int id) {
 
-        String sql = "DELETE FROM comanda WHERE id = ?";
+        String sql = "DELETE FROM comanda WHERE id_comanda = ?";
 
         try (
             Connection conn = Database.getConnection();

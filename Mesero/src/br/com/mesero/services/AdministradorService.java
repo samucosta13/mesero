@@ -9,11 +9,9 @@ public class AdministradorService extends UsuarioService {
 
     @Override
     public Usuario criaUsuario(String email, String senha, String nome) {
-
         Administrador adm = new Administrador(email, senha, nome);
         administradorDao.inserir(adm, senha);
         return adm;
-
     }
 
     @Override
@@ -23,13 +21,8 @@ public class AdministradorService extends UsuarioService {
 
     @Override
     public boolean entra(String email, String senha){
-
-        if (!senha.equals(administradorDao.localizarPorEmail(email).getEmail())) {
-            return false;
-        } else {
-            return true;
-        }
-
+        Administrador adm = administradorDao.localizarPorEmail(email);
+        return adm != null && adm.autenticar(senha);
     }
 
 }
