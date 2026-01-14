@@ -36,4 +36,24 @@ public class PedidoDAO {
         }
     }
 
+    public boolean deletar(int id) {
+
+        String sql = "DELETE FROM pedido WHERE id = ?";
+
+        try (
+            Connection conn = Database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) {
+            ps.setInt(1, id);
+            int retorno = ps.executeUpdate(); 
+            // ps.executeUpdate retorna quantas linhas foram afetadas
+
+            return retorno > 0; // a proposição retorno > 0 pode ser true ou false
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao deletar pedido", e);
+        }
+
+    }
+
 }

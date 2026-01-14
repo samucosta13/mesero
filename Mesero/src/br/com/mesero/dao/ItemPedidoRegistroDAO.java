@@ -35,4 +35,24 @@ public class ItemPedidoRegistroDAO {
             throw new RuntimeException("Erro ao registrar item de pedido", e);
         }
     }
+
+    public boolean deletar(int id) {
+
+        String sql = "DELETE FROM registro WHERE id = ?";
+
+        try (
+            Connection conn = Database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) {
+            ps.setInt(1, id);
+            int retorno = ps.executeUpdate(); 
+            // ps.executeUpdate retorna quantas linhas foram afetadas
+
+            return retorno > 0; // a proposição retorno > 0 pode ser true ou false
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao deletar registro de item", e);
+        }
+
+    }
 }

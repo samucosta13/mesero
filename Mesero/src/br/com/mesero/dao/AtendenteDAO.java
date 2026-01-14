@@ -36,6 +36,26 @@ public class AtendenteDAO {
         }
     }
 
+    public boolean deletar(int id) {
+
+        String sql = "DELETE FROM atendente WHERE id = ?";
+
+        try (
+            Connection conn = Database.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)
+        ) {
+            ps.setInt(1, id);
+            int retorno = ps.executeUpdate(); 
+            // ps.executeUpdate retorna quantas linhas foram afetadas
+
+            return retorno > 0; // a proposição retorno > 0 pode ser true ou false
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao deletar atendente", e);
+        }
+
+    }
+
     public Atendente localizarPorEmail(String email) {
 
         String sql = "SELECT id_atendente, nome, email, senha FROM atendente WHERE email = ?";

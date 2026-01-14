@@ -17,6 +17,11 @@ public class AdministradorService extends UsuarioService {
     }
 
     @Override
+    public boolean apagaUsuario(int identificador) {
+        return administradorDao.deletar(identificador);
+    }
+
+    @Override
     public boolean entra(String email, String senha){
 
         if (!senha.equals(administradorDao.localizarPorEmail(email).getEmail())) {

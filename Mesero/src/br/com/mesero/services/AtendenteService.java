@@ -17,6 +17,11 @@ public class AtendenteService extends UsuarioService {
     }
 
     @Override
+    public boolean apagaUsuario(int identificador) {
+        return atendenteDAO.deletar(identificador);
+    }
+
+    @Override
     public boolean entra(String email, String senha){
 
         if (!senha.equals(atendenteDAO.localizarPorEmail(email).getEmail())) {
