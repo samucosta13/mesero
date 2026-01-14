@@ -32,7 +32,7 @@ public class PedidoDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao encaminhar pedido", e);
+            throw new RuntimeException("Erro ao salvar pedido", e);
         }
     }
 
