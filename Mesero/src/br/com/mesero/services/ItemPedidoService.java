@@ -5,7 +5,7 @@ import br.com.mesero.models.*;
 
 public class ItemPedidoService {
 
-    ItemPedidoDAO itemDao = new ItemPedidoDAO();
+    private ItemPedidoDAO itemDao = new ItemPedidoDAO();
 
     public ItemPedido criaItemPedido(String nome, Central central) {
         ItemPedido item = new ItemPedido(nome);

@@ -5,7 +5,7 @@ import br.com.mesero.models.*;
 
 public class ComandaService {
 
-    ComandaDAO comandaDAO = new ComandaDAO();
+    private ComandaDAO comandaDAO = new ComandaDAO();
 
     public Comanda criaComanda(int numero, Atendente atendente, Central central) {
         Comanda comanda = new Comanda(numero, atendente);

@@ -5,7 +5,7 @@ import br.com.mesero.models.*;
 
 public class CentralService {
 
-    CentralDAO centralDAO = new CentralDAO();
+    private CentralDAO centralDAO = new CentralDAO();
 
     public Central criaCentral(Administrador adm, String nome) {
         Central central = new Central(adm, nome);

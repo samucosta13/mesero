@@ -5,7 +5,7 @@ import br.com.mesero.models.*;
 
 public class AdministradorService extends UsuarioService {
 
-    AdministradorDAO administradorDao = new AdministradorDAO();
+    private AdministradorDAO administradorDao = new AdministradorDAO();
 
     @Override
     public Usuario criaUsuario(String email, String senha, String nome) {

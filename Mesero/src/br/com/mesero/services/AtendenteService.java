@@ -5,7 +5,7 @@ import br.com.mesero.models.*;
 
 public class AtendenteService extends UsuarioService {
 
-    AtendenteDAO atendenteDAO = new AtendenteDAO();
+    private AtendenteDAO atendenteDAO = new AtendenteDAO();
 
     @Override
     public Usuario criaUsuario(String email, String senha, String nome) {
