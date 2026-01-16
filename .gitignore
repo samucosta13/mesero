@@ -1,1 +1,3 @@
 Mesero/bin/
+Mesero/.env
+Mesero/docker-compose.yaml
