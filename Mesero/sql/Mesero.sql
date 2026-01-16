@@ -1,4 +1,4 @@
-CREATE SCHEMA mesero;
+CREATE DATABASE IF NOT EXISTS mesero;
 USE mesero;
 
 CREATE TABLE administrador(
